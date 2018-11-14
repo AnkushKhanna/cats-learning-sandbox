@@ -15,8 +15,8 @@ object BooleanMonoidTest extends Properties("Boolean Monoid") with MonoidSpec[Bo
 
   property("associativity orBoolean") = forAll {
     (x: Boolean, y: Boolean, z: Boolean) =>
-      assosicativeLaw(x, y, z)(BooleanMonoids.orMonoid) &&
-        assosicativeLaw(x, y, z)(BooleanMonoids.andMonoid) &&
-        assosicativeLaw(x, y, z)(BooleanMonoids.xorMonoid)
+      associativeLaw(x, y, z)(BooleanMonoids.orMonoid) &&
+        associativeLaw(x, y, z)(BooleanMonoids.andMonoid) &&
+        associativeLaw(x, y, z)(BooleanMonoids.xorMonoid)
   }
 }

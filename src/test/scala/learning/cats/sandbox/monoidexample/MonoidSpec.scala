@@ -6,7 +6,7 @@ trait MonoidSpec[A] {
       m.combine(m.empty, n) == n
   }
 
-  def assosicativeLaw(x: A, y: A, z: A)(implicit m: Monoid[A]) = {
+  def associativeLaw(x: A, y: A, z: A)(implicit m: Semigroup[A]) = {
     m.combine(x, m.combine(y, z)) ==
       m.combine(m.combine(x, y), z)
   }
