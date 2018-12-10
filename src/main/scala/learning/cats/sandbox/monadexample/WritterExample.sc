@@ -47,6 +47,8 @@ type Logged[A] = Writer[Vector[String], A]
 import cats.instances.vector._
 import cats.syntax.applicative._
 
+// For-yield is map and flatmap and WriterT is reserved in between steps
+
 def factorialLogged(n: Int): Logged[Int] =
   for {
     ans <- if (n == 0) 1.pure[Logged] else slowly(factorialLogged(n - 1).map(_ * n))
